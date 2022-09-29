@@ -23,9 +23,14 @@ jobs:
         run: |
             echo Python Set up completed...
             echo Installing dependencies...
-            python -m pip install flake8 pep8-naming
+            python -m pip install flake8 pep8-naming pytest
         
       - name: linting with flake8
         run: |
             echo Checking flake8 competency...
             flake8 . --count --exit-zero --max-complexity=10 --max-line-length=100
+
+      - name: checking unit tests
+        run: |
+            echo Running unit tests
+            pytest
