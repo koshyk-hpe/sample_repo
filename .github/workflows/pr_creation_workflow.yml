@@ -1,0 +1,32 @@
+# Workflow for integration
+
+name: Pre-requisites for Integration
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  pr_conditions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checking out repository
+        uses: actions/checkout@v3
+
+      - name: setting up Python
+        run: |
+            echo Setting up Python...
+            actions/setup-python@v3
+        
+      - name: installing dependencies
+        run: |
+            echo Installing dependencies...
+            python -m pip install flake8 pep8-naming
+        
+      - name: linting with flake8
+        run: |
+            echo Checking flake8 competency...
+            flake8 . --count --exit-zero --max-complexity=10 --max-line-length=100
