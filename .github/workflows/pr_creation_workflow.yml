@@ -33,4 +33,4 @@ jobs:
       - name: checking unit tests
         run: |
             echo Running unit tests
-            pytest
+            pytest -v -s
