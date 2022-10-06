@@ -29,6 +29,11 @@ jobs:
         run: |
             echo Checking flake8 competency...
             flake8 . --count --exit-zero --max-complexity=10 --max-line-length=100
+            
+      - name: setting env varibles
+        run: |
+            export USER=secrets.USER
+            echo $USER
 
       - name: checking unit tests
         run: |
