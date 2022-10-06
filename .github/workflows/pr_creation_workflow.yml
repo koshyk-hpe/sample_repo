@@ -32,8 +32,8 @@ jobs:
             
       - name: setting env varibles
         run: |
-            export USER=secrets.USER
-            echo $USER
+            export USER=${{secrets.USER}}
+            echo ${{USER}}
 
       - name: checking unit tests
         run: |
