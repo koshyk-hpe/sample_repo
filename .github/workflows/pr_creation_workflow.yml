@@ -11,6 +11,8 @@ on:
 jobs:
   pr_conditions:
     runs-on: ubuntu-latest
+    env: |
+        USER: test_kkoshy
 
     steps:
       - name: checking out repository
@@ -30,10 +32,9 @@ jobs:
             echo Checking flake8 competency...
             flake8 . --count --exit-zero --max-complexity=10 --max-line-length=100
             
-      - name: setting env varibles
+      - name: setting env variables
         run: |
-            export USER=${{secrets.USER}}
-            echo ${{USER}}
+            echo ${{env.USER}}
 
       - name: checking unit tests
         run: |
