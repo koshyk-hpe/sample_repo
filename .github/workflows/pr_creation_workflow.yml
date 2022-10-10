@@ -34,7 +34,7 @@ jobs:
             
       - name: setting env variables
         run: |
-            echo ${{env.USER}}
+            echo "${{ env.USER }}"
 
       - name: checking unit tests
         run: |
