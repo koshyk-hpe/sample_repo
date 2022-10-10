@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     env: 
         USER: test_koshyk
+        HEAD_VALUE: ${{ secrets.HEAD_VALUE }}
 
     steps:
       - name: checking out repository
@@ -36,6 +37,11 @@ jobs:
         run: |
             echo Setting up environmental variables
             echo ${{ env.USER }}
+            
+      - name: accessing repo secrets
+        run: |
+            echo Accessing repo secrets
+            echo ${{ env.HEAD_VALUE }}
 
       - name: checking unit tests
         run: |
