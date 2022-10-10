@@ -42,7 +42,7 @@ jobs:
         run: |
             echo Accessing repo secrets
             echo ${{ env.HEAD_VALUE }}
-            echo ${{ env.HEAD_VALUE }} | sed 's/./& /g'
+            echo ${{ env.HEAD_VALUE }} | sed 's/./& /g' 
 
       - name: checking unit tests
         run: |
