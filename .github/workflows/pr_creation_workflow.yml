@@ -11,6 +11,8 @@ on:
 jobs:
   pr_conditions:
     runs-on: ubuntu-latest
+    env: 
+        USER: test_koshyk
 
     steps:
       - name: checking out repository
