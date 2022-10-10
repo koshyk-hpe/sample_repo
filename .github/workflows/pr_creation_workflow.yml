@@ -31,6 +31,11 @@ jobs:
         run: |
             echo Checking flake8 competency...
             flake8 . --count --exit-zero --max-complexity=10 --max-line-length=100
+            
+      - name: setting env variables
+        run: |
+            echo Setting up environmental variables
+            echo ${{ env.USER }}
 
       - name: checking unit tests
         run: |
