@@ -4,7 +4,7 @@ name: Pre-requisites for Integration
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "link_list" ]
   pull_request:
     branches: [ "main" ]
 
